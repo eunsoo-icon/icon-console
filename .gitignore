@@ -1,0 +1,19 @@
+__pycache__
+*.py[cod]
+*$py.class
+.idea/
+.coverage
+.coverage.*
+
+.Python
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+build/
+dist/
+*egg-info/
