@@ -173,7 +173,16 @@ class Score(object):
 
     def _call(self, func: str, args, kwargs):
         api: API = self._apis[func]
-        return api.call(self._net, self._address, args, kwargs, self._account.wallet(), self._value, self._step_limit)
+
+        return api.call(
+            self._net,
+            self._address,
+            args,
+            kwargs,
+            self._account.wallet() if self._account is not None else None,
+            self._value,
+            self._step_limit,
+        )
 
     def _set_methods(self):
         resp = self._net.sdk.get_score_api(self.address())
